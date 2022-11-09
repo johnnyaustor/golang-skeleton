@@ -5,6 +5,7 @@ import (
 
 	"github.com/johnnyaustor/golang-skeleton/server/api"
 	"github.com/johnnyaustor/golang-skeleton/server/configuration"
+	"github.com/johnnyaustor/golang-skeleton/server/database"
 	"github.com/labstack/echo/v4"
 )
 
@@ -15,7 +16,7 @@ func init() {
 
 func RunServer() {
 	// Connect to Database
-	db := configuration.ConnectDatabase()
+	db := database.ConnectDatabase()
 
 	log.Println("Run Server")
 	e := echo.New()

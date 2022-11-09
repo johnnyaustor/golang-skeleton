@@ -1,19 +1,19 @@
 package user
 
-import "gorm.io/gorm"
+import (
+	"github.com/johnnyaustor/golang-skeleton/server/database"
+)
 
 type Repository interface {
 	Get() string
 }
 
 type repository struct {
-	db *gorm.DB
+	*database.DB
 }
 
-func NewRepository(db *gorm.DB) Repository {
-	return &repository{
-		db: db,
-	}
+func NewRepository(db *database.DB) Repository {
+	return &repository{db}
 }
 
 func (r *repository) Get() string {
