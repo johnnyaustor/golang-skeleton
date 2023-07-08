@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/johnnyaustor/golang-skeleton/server/configuration"
+	"github.com/johnnyaustor/golang-skeleton/internal/app/goskeleton/configuration"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
