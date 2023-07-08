@@ -1,7 +1,7 @@
 package user
 
 import (
-	"github.com/johnnyaustor/golang-skeleton/server/database"
+	"github.com/johnnyaustor/golang-skeleton/internal/app/goskeleton/database"
 )
 
 type Repository interface {

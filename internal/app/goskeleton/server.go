@@ -1,11 +1,11 @@
-package server
+package goskeleton
 
 import (
 	"log"
 
-	"github.com/johnnyaustor/golang-skeleton/server/api"
-	"github.com/johnnyaustor/golang-skeleton/server/configuration"
-	"github.com/johnnyaustor/golang-skeleton/server/database"
+	"github.com/johnnyaustor/golang-skeleton/internal/app/goskeleton/configuration"
+	"github.com/johnnyaustor/golang-skeleton/internal/app/goskeleton/database"
+	"github.com/johnnyaustor/golang-skeleton/internal/app/goskeleton/restapi"
 	"github.com/labstack/echo/v4"
 )
 
@@ -22,7 +22,7 @@ func RunServer() {
 	e := echo.New()
 
 	// Initial Beans
-	api.InitialBeans(e, db)
+	restapi.NewRoutes(e, db)
 
 	e.Logger.Fatal(e.Start(":1323"))
 }
